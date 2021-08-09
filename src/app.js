@@ -6,12 +6,13 @@ import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
 
 window.onload = () => {
-  document.querySelector(".card").classList.add(generateRandomSuit());
-  document.querySelector(".card").innerHTML = generateRandomNumber();
+  let card = document.querySelector(".card");
+  card.classList.add(generateRandomSuit());
+  card.innerHTML = generateRandomNumber();
 };
 
 function generateRandomNumber() {
-  let number = [
+  let numbers = [
     "A",
     "1",
     "2",
@@ -27,12 +28,12 @@ function generateRandomNumber() {
     "Q",
     "K"
   ];
-  let indexNumber = Math.floor(Math.random() * number.length);
-  return number[indexNumber];
+  let indexNumber = Math.floor(Math.random() * numbers.length);
+  return numbers[indexNumber];
 }
 
 function generateRandomSuit() {
-  let suit = ["spade", "club", "heart", "diamond"];
-  let indexSuit = Math.floor(Math.random() * suit.length);
-  return suit[indexSuit];
+  let suits = ["spade", "club", "heart", "diamond"];
+  let indexSuit = Math.floor(Math.random() * suits.length);
+  return suits[indexSuit];
 }
